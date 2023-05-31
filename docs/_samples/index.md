@@ -1,5 +1,6 @@
 ---
 permalink: /samples/index.html
+published: true
 ---
 This is tB samples main page.
 
@@ -17,7 +18,9 @@ This is tB samples main page.
 <ul>
   {% assign items = cat.items | sort: 'order' %}
   {% for item in items %}
+    {% if item.title %}
     <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endif %}
   {% endfor %}
 </ul>
 {% endfor %}
